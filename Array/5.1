@@ -1,0 +1,16 @@
+Console.WriteLine("Du får nu skriva in 5 namn");
+
+string[] namn = new string[5];
+
+for (int i = 0; i < namn.Length; i++)
+{
+    Console.WriteLine($"Skriv in namn {i + 1}");
+    namn[i] = Console.ReadLine();
+}
+
+Console.WriteLine("Här är de städer du skrev in");
+
+foreach (string namnfärdig in namn)
+{
+    Console.WriteLine(namnfärdig);
+}
