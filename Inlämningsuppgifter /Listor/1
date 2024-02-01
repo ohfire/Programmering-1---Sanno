@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        var namnLista = new List<string>();
+
+        Console.WriteLine("Skriv in namn (tryck enter för att avsluta):");
+
+        while (Console.ReadLine() is { } namn && !string.IsNullOrEmpty(namn))
+        {
+            namnLista.Add(namn);
+        }
+
+        namnLista.Reverse();
+
+        Console.WriteLine("\nNamn i omvänd bokstavsordning:");
+
+        foreach (var namn in namnLista)
+        {
+            Console.WriteLine(namn);
+        }
+    }
+}
