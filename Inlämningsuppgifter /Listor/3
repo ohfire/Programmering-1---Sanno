@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        Dictionary<string, int> countrySizes = new Dictionary<string, int>
+        {
+            { "Sverige", 450 },
+            { "Norge", 385 },
+            { "Danmark", 43 },
+            { "Finland", 338 }
+        };
+
+        Console.Write("Enter the name of a country: ");
+        string countryName = Console.ReadLine();
+
+        if (countrySizes.ContainsKey(countryName))
+        {
+            int size = countrySizes[countryName];
+            Console.WriteLine($"The size of {countryName} is {size} (in units of 10^5 km^2).");
+        }
+        else
+        {
+            Console.WriteLine("Country not found.");
+        }
+    }
+}
