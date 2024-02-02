@@ -1,0 +1,26 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string[] strings = { "hej", "nej", "ja" };
+        char characterToFind = 'j';
+
+        bool characterExistsInAllStrings = FinnsTecknetIAllaSträngar(strings, characterToFind);
+        
+        Console.WriteLine($"Character '{characterToFind}' exists in all strings: {characterExistsInAllStrings}");
+    }
+
+    static bool FinnsTecknetIAllaSträngar(string[] strings, char character)
+    {
+        foreach (string str in strings)
+        {
+            if (!str.Contains(character))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+}
