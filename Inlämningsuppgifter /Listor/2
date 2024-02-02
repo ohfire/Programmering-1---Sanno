@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        List<int> numbers = new List<int> { 3, 8, 1, 6, 12, 5 };
+
+        int maxNumber = Max(numbers);
+        
+        Console.WriteLine($"The maximum number in the list is: {maxNumber}");
+    }
+
+    static int Max(List<int> numbers)
+    {
+        if (numbers == null || numbers.Count == 0)
+        {
+            throw new ArgumentException("List cannot be null or empty.");
+        }
+
+        return numbers.Max();
+    }
+}
