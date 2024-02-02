@@ -1,0 +1,21 @@
+using System;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        string[] array1 = { "a", "b", "b", "c", "hej" };
+        string[] array2 = { "hej", "a", "a", "b", "programmering" };
+
+        string[] commonStrings = FinnsIBåda(array1, array2);
+
+        Console.WriteLine("Common strings in both arrays:");
+        Console.WriteLine(string.Join(", ", commonStrings));
+    }
+
+    static string[] FinnsIBåda(string[] array1, string[] array2)
+    {
+        return array1.Intersect(array2).ToArray();
+    }
+}
