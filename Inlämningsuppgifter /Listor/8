@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("How many codes do you want to enter? ");
+        int numCodes = int.Parse(Console.ReadLine());
+
+        Dictionary<char, char> codeMap = new Dictionary<char, char>();
+
+        Console.WriteLine("Enter your codes (format: X Y):");
+        for (int i = 0; i < numCodes; i++)
+        {
+            string[] code = Console.ReadLine().Split(' ');
+            codeMap[code[0][0]] = code[1][0];
+        }
+
+        Console.Write("Enter your secret message: ");
+        string secretMessage = Console.ReadLine();
+
+        string decodedMessage = DecodeMessage(secretMessage, codeMap);
+
+        Console.WriteLine($"Decoded Message: {decodedMessage}");
+    }
+
+    static string DecodeMessage(string message, Dictionary<char, char> codeMap)
+    {
+        char[] decodedChars = message.Select(c => codeMap.ContainsKey(c) ? codeMap[c] : c).ToArray();
+        return new string(decodedChars);
+    }
+}
