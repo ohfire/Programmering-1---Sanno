@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter names of products:");
+        string[] productNames = Console.ReadLine().Split(' ');
+
+        Console.WriteLine("Enter prices of products:");
+        int[] productPrices = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+
+        Console.WriteLine("Enter your shopping list:");
+        string[] shoppingList = Console.ReadLine().Split(' ');
+
+        int totalCost = CalculateTotalCost(productNames, productPrices, shoppingList);
+        Console.WriteLine($"The total cost of your shopping list is: {totalCost}");
+    }
+
+    static int CalculateTotalCost(string[] produc
