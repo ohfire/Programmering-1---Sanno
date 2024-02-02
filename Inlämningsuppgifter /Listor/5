@@ -1,0 +1,17 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        List<int> salaries = new List<int>();
+
+        Console.WriteLine("Enter monthly salaries (enter 0 to finish):");
+
+        int salary;
+        do
+        {
+            Console.Write("Enter salary: ");
+        
